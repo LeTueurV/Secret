@@ -9,20 +9,24 @@ async function hashPassword(password) {
 
 async function Vérif() {
     var vI = { 
-        "6a7777b75458adf9a824414623537e137d8442f314dc6dc5e711e5e9329aa748": 
-        "8c8c11fb1189d882425d9bb229024689a601ba4b13a1e614d4303e15a578bb2c"  // Mot de passe haché
+        "75def24ddeb1701d8b9eca88e00db2053c69d72035f739f8779a89beb79fef7a": 
+        "54d4330787e25c5eae3d4acfbd6f4a47a99f5c92c379d0a8e0ed4ec717800842"  // Mot de passe haché
     };
 
     var identifiant = document.getElementById('i').value;
     var motDePasse = document.getElementById('mdp').value;
     var errorMessage = document.getElementById('error-message');
 
-    // Hacher l'identifiant et le mot de passe entrés
+    // Hacher l'identifiant et le mot de passe une première fois
     var hashedIdentifiant = await hashPassword(identifiant);
     var hashedPassword = await hashPassword(motDePasse);
 
-    // Vérification des identifiants hachés
-    if (vI[hashedIdentifiant] === hashedPassword) {
+    // Hacher de nouveau les résultats obtenus
+    var doubleHashedIdentifiant = await hashPassword(hashedIdentifiant);
+    var doubleHashedPassword = await hashPassword(hashedPassword);
+
+    // Vérification des identifiants hachés deux fois
+    if (vI[doubleHashedIdentifiant] === doubleHashedPassword) {
         window.location.href = "autorisé.html"; 
     } else {
         errorMessage.textContent = "Identifiant ou Mot de passe incorrect";
