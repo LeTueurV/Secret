@@ -1,0 +1,26 @@
+body{
+    background:linear-gradient(to right,violet,black);
+}
+
+div{
+    background-color: #C0C0C0;
+    width: 15%;
+    text-align: center;
+    margin-top: 5%;
+    margin:auto;
+    margin-top: auto;
+    box-shadow: 10px 5px 5px black;
+    border-radius: 5%;
+}
+
+input{
+    text-align: center;
+    box-sizing: border-box;
+}
+p{
+    margin-top: 10%;
+}
+
+#val{
+    margin-top: 10%;
+}
