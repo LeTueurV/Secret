@@ -8,7 +8,6 @@ async function hashPassword(password) {
 }
 
 async function Vérif() {
-    // Hachage SHA-256 pour identifiant "Admin" et mot de passe correspondant
     var vI = { 
         "6a7777b75458adf9a824414623537e137d8442f314dc6dc5e711e5e9329aa748": 
         "8c8c11fb1189d882425d9bb229024689a601ba4b13a1e614d4303e15a578bb2c"  // Mot de passe haché
