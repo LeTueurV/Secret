@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <link rel="stylesheet" type="text/css" href="styles.css"  >
+        <link rel="stylesheet" type="text/css" href="styles.css">
         <script type="text/javascript" src="script.js"></script>
         <title>Connexion</title>
     </head>
     <body>
-        <div>
+        <div class="login-container">
             <h3>Connexion</h3>
             <form>
-                <p>Identifiant:</p>
-                <input type="text" required  id="i"><br>
-                <p>Mot de passe:</p>
-                <input type="password" required  id="mdp" ><br>
-                <input type="button" value="Se connecter" onclick="Vérif()" id="val"><br>
+                <p class="label">Identifiant:</p>
+                <input type="text" required id="i" class="input-field"><br>
+                <p class="label">Mot de passe:</p>
+                <input type="password" required id="mdp" class="input-field"><br>
+                <input type="button" value="Se connecter" onclick="Vérif()" class="btn-submit"><br>
             </form>
+        </div>
     </body>
-
 </html>

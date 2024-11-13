@@ -1,26 +1,79 @@
-body{
-    background:linear-gradient(to right,violet,black);
-}
-
-div{
-    background-color: #C0C0C0;
-    width: 15%;
-    text-align: center;
-    margin-top: 5%;
-    margin:auto;
-    margin-top: auto;
-    box-shadow: 10px 5px 5px black;
-    border-radius: 5%;
-}
-
-input{
-    text-align: center;
+/* Général */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
-p{
-    margin-top: 10%;
+    font-family: 'Arial', sans-serif;
 }
 
-#val{
-    margin-top: 10%;
+/* Fond de la page avec un dégradé */
+body {
+    background: linear-gradient(to right, violet, black);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
+
+/* Conteneur principal du formulaire */
+.login-container {
+    background-color: rgba(192, 192, 192, 0.9); /* Couleur gris clair avec transparence */
+    width: 350px;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Ombre douce */
+}
+
+/* Titre */
+h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style des étiquettes */
+.label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+/* Champ de saisie */
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 16px;
+}
+
+.input-field:focus {
+    border-color: #5c6bc0; /* Changer la couleur de bordure au focus */
+}
+
+/* Bouton de connexion */
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: #5c6bc0;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #3f4d9d; /* Changer la couleur au survol */
+}
+
+/* Espacement */
+input, .label {
+    margin-bottom: 15px;
+}
+
