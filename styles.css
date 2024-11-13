@@ -16,14 +16,15 @@ body {
     color: white;
 }
 
-/* Conteneur principal du formulaire */
-.login-container {
+/* Conteneur principal pour les formulaires et sections de téléchargement */
+.container {
     background-color: rgba(192, 192, 192, 0.9); /* Couleur gris clair avec transparence */
-    width: 350px;
+    width: 400px; /* Élargir légèrement */
     padding: 30px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Ombre douce */
+    margin: 20px; /* Espacement vertical */
 }
 
 /* Titre */
@@ -72,6 +73,30 @@ h3 {
     background-color: #3f4d9d; /* Changer la couleur au survol */
 }
 
+/* Section des liens de téléchargement */
+.download-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px; /* Ajouter un espacement au-dessus */
+}
+
+.download-links a {
+    display: block;
+    padding: 15px; /* Espacement interne pour des liens plus larges */
+    background-color: #5c6bc0;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.download-links a:hover {
+    background-color: #3f4d9d;
+}
+
 /* Espacement */
 input, .label {
     margin-bottom: 15px;
@@ -82,37 +107,4 @@ input, .label {
     font-size: 14px;
     margin-top: 10px;
     display: none; /* Cacher par défaut */
-}
-
-/* Conteneur principal pour la page de téléchargement */
-.download-container {
-    background-color: rgba(192, 192, 192, 0.9); /* Même couleur que le conteneur de connexion */
-    width: 350px;
-    padding: 30px;
-    text-align: center;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Ombre douce */
-}
-
-/* Liens de téléchargement */
-.download-links {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.download-links a {
-    display: block;
-    padding: 12px;
-    background-color: #5c6bc0; /* Même couleur que le bouton de connexion */
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-    border-radius: 5px;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
-
-.download-links a:hover {
-    background-color: #3f4d9d; /* Couleur au survol, comme pour le bouton de connexion */
 }

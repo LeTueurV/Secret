@@ -7,19 +7,26 @@ async function hashPassword(password) {
     return hashHex; // Retourne le hachage sous forme de chaîne hexadécimale
 }
 
-
-
 async function Vérif() {
-    var vI = { "Admin": "8c8c11fb1189d882425d9bb229024689a601ba4b13a1e614d4303e15a578bb2c" };
+    // Hachage SHA-256 pour identifiant "Admin" et mot de passe correspondant
+    var vI = { 
+        "6a7777b75458adf9a824414623537e137d8442f314dc6dc5e711e5e9329aa748": 
+        "8c8c11fb1189d882425d9bb229024689a601ba4b13a1e614d4303e15a578bb2c"  // Mot de passe haché
+    };
+
     var identifiant = document.getElementById('i').value;
     var motDePasse = document.getElementById('mdp').value;
-    var hashedPassword = await hashPassword(motDePasse);
     var errorMessage = document.getElementById('error-message');
 
-    if (vI[identifiant] === hashedPassword) {
+    // Hacher l'identifiant et le mot de passe entrés
+    var hashedIdentifiant = await hashPassword(identifiant);
+    var hashedPassword = await hashPassword(motDePasse);
+
+    // Vérification des identifiants hachés
+    if (vI[hashedIdentifiant] === hashedPassword) {
         window.location.href = "autorisé.html"; 
     } else {
-        errorMessage.textContent = "Identifiant ou Mot de passe incorrect"; // Affiche le message d'erreur
-        errorMessage.style.display = "block"; // Affiche le message d'erreur
+        errorMessage.textContent = "Identifiant ou Mot de passe incorrect";
+        errorMessage.style.display = "block";
     }
 }
