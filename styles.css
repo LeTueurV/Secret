@@ -77,3 +77,9 @@ input, .label {
     margin-bottom: 15px;
 }
 
+.error-message {
+    color: #d9534f; /* Rouge vif */
+    font-size: 14px;
+    margin-top: 10px;
+    display: none; /* Cacher par défaut */
+}

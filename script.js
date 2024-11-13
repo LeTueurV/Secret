@@ -9,15 +9,17 @@ async function hashPassword(password) {
 
 
 
-function Vérif()
-{
-    var vI={"Admin" : "8c8c11fb1189d882425d9bb229024689a601ba4b13a1e614d4303e15a578bb2c "};
-    var identifiant = document.getElementById('i').value; 
+async function Vérif() {
+    var vI = { "Admin": "8c8c11fb1189d882425d9bb229024689a601ba4b13a1e614d4303e15a578bb2c" };
+    var identifiant = document.getElementById('i').value;
     var motDePasse = document.getElementById('mdp').value;
     var hashedPassword = await hashPassword(motDePasse);
+    var errorMessage = document.getElementById('error-message');
+
     if (vI[identifiant] === hashedPassword) {
         window.location.href = "autorisé.html"; 
     } else {
-        alert("Identifiant ou Mot de passe incorrect");
+        errorMessage.textContent = "Identifiant ou Mot de passe incorrect"; // Affiche le message d'erreur
+        errorMessage.style.display = "block"; // Affiche le message d'erreur
     }
 }
