@@ -3,10 +3,50 @@
     <head>
         <title>Réussite - Téléchargements</title>
         <link rel="stylesheet" type="text/css" href="styles.css">
+        <script>
+            // Clé d'accès pré-hachée (double SHA-256)
+            const authorizedHash = "7703284bb281befaeda84ddb87698c2d350861c89be1253de8c4a3cc9211219d"; // Exemple pour Jonas
+
+            // Fonction pour hacher en SHA-256
+            async function hashSHA256(message) {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(message);
+                const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+                const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+                return hashHex;
+            }
+
+            // Vérification de la clé d'accès
+            async function checkAccess() {
+                const userKey = prompt("Veuillez entrer la clé d'accès pour accéder à cette page :");
+                if (!userKey) {
+                    alert("Accès refusé !");
+                    window.location.href = "Index.html"; // Redirection si aucune clé n'est fournie
+                    return;
+                }
+
+                const hashedKey = await hashSHA256(userKey);
+                if (hashedKey !== authorizedHash) {
+                    alert("Clé incorrecte !");
+                    window.location.href = "Index.html"; // Redirection en cas de clé incorrecte
+                } else {
+                    document.getElementById("protected-content").style.display = "block"; // Affiche le contenu
+                }
+            }
+
+            // Exécution de la vérification à l'ouverture de la page
+            window.onload = checkAccess;
+        </script>
+        <style>
+            #protected-content {
+                display: none; /* Cache le contenu par défaut */
+            }
+        </style>
     </head>
     <body>
-        <div class="container">
-            <h3>Bienvenue dans l'espace de téléchargement de belle-maman</h3>
+        <div id="protected-content" class="container">
+            <h3>Bienvenue dans l'espace de téléchargement de Belle-mère</h3>
             <p>Merci de vous être connecté ! Voici les fichiers disponibles au téléchargement :</p>
             <div class="download-links">    
             </div>
