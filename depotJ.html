@@ -26,7 +26,7 @@
                     return;
                 }
 
-                const hashedKey = await hachSHA256(hashSHA256(userKey));
+                const hashedKey = await hashSHA256(hashSHA256(userKey));
                 if (hashedKey !== authorizedHash) {
                     alert("Clé incorrecte !");
                     window.location.href = "index.html"; // Redirection en cas de clé incorrecte
