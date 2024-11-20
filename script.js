@@ -63,7 +63,21 @@ async function Vérif() {
     // Vérification des identifiants hachés deux fois
     if (Nino[doubleHashedIdentifiant] === doubleHashedPassword) {
         window.location.href = "autorisé.html"; 
-    } else {
+    } else if (Jonas[doubleHashedIdentifiant] === doubleHashedPassword) {
+        window.location.href = "depotJ.html"; 
+    }else if (Liwen[doubleHashedIdentifiant] === doubleHashedPassword) {
+        window.location.href = "depotL.html"; 
+    }else if (Satine[doubleHashedIdentifiant] === doubleHashedPassword) {
+        window.location.href = "depotS.html"; 
+    }else if (Jade[doubleHashedIdentifiant] === doubleHashedPassword) {
+        window.location.href = "depotJa.html"; 
+    }else if (Maïlys[doubleHashedIdentifiant] === doubleHashedPassword) {
+        window.location.href = "depotM.html"; 
+    }else if (Carine[doubleHashedIdentifiant] === doubleHashedPassword) {
+        window.location.href = "depotC.html"; 
+    }else if (Ludovic[doubleHashedIdentifiant] === doubleHashedPassword) {
+        window.location.href = "depotLu.html"; 
+    }else {
         errorMessage.textContent = "Identifiant ou Mot de passe incorrect";
         errorMessage.style.display = "block";
     }
