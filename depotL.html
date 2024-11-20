@@ -22,14 +22,14 @@
                 const userKey = prompt("Veuillez entrer la clé d'accès pour accéder à cette page :");
                 if (!userKey) {
                     alert("Accès refusé !");
-                    window.location.href = "Index.html"; // Redirection si aucune clé n'est fournie
+                    window.location.href = "index.html"; // Redirection si aucune clé n'est fournie
                     return;
                 }
 
-                const hashedKey = await hashSHA256(userKey);
+                const hashedKey = await hashSHA256(hashSHA256(userKey));
                 if (hashedKey !== authorizedHash) {
                     alert("Clé incorrecte !");
-                    window.location.href = "Index.html"; // Redirection en cas de clé incorrecte
+                    window.location.href = "index.html"; // Redirection en cas de clé incorrecte
                 } else {
                     document.getElementById("protected-content").style.display = "block"; // Affiche le contenu
                 }
@@ -44,8 +44,8 @@
             }
         </style>
     </head>
-    <body>
-        <div id="protected-content" class="container">
+    <body id="protected-content">
+        <div  class="container">
             <h3>Bienvenue dans l'espace de téléchargement de Liwen</h3>
             <p>Merci de vous être connecté ! Voici les fichiers disponibles au téléchargement :</p>
             <div class="download-links">    
