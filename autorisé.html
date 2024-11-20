@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="styles.css">
         <script>
             // Clé d'accès pré-hachée (double SHA-256)
-            const authorizedHash = "54d4330787e25c5eae3d4acfbd6f4a47a99f5c92c379d0a8e0ed4ec717800842"; // Exemple pour Jonas
+            const authorizedHash = "54d4330787e25c5eae3scqscqscqscqvfzevfvd4acfbd6f4a47a99f5c92c379d0a8e0ed4ec717800842"; // Exemple pour Jonas
 
             // Fonction pour hacher en SHA-256
             async function hashSHA256(message) {
@@ -22,14 +22,14 @@
                 const userKey = prompt("Veuillez entrer la clé d'accès pour accéder à cette page :");
                 if (!userKey) {
                     alert("Accès refusé !");
-                    window.location.href = "Index.html"; // Redirection si aucune clé n'est fournie
+                    window.location.href = "index.html"; // Redirection si aucune clé n'est fournie
                     return;
                 }
 
                 const hashedKey = await hashSHA256(hashSHA256(userKey));
                 if (hashedKey !== authorizedHash) {
                     alert("Clé incorrecte !");
-                    window.location.href = "Index.html"; // Redirection en cas de clé incorrecte
+                    window.location.href = "index.html"; // Redirection en cas de clé incorrecte
                 } else {
                     document.getElementById("protected-content").style.display = "block"; // Affiche le contenu
                 }
